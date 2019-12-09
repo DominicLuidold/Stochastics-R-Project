@@ -112,6 +112,7 @@ cor.test(abwechlungsreich, strukturiert, method="pearson")
 
 #Zusammenhang Termin & Zeit und Geschwindigkeit im Unterricht
 
+NA.rm=TRUE
 termin <- data[,"Termin"]
 geschwindigkeit <- data[, "Vorlesung.Geschwindigkeit"]
 
@@ -127,7 +128,29 @@ abline(lm(geschwindigkeit~termin))
 shapiro.test(termin)
 shapiro.test(geschwindigkeit)
 
-cor.test(abwechlungsreich, strukturiert, method="spearman")
+cor.test(termin, geschwindigkeit, method="spearman")
 
-# r = rho = 0.3631...
+# r = rho = 0.0695...
 
+
+#Zusammenhang Gesamteindruck und Schwierigkeit im Unterricht
+
+NA.rm=TRUE
+gesamteindruck <- data[,"Gesamteindruck"]
+schwierigkeit <- data[, "Uebung.schwierig"]
+
+plot(gesamteindruck, schwierigkeit)
+cor(gesamteindruck,schwierigkeit)
+
+lm(schwierigkeit~gesamteindruck) 
+abline(lm(schwierigkeit~gesamteindruck))
+
+#Berechnung des Korrelationsfaktors r
+
+#Wenn Werte > 0.05 nach Shapiro-Test, kann diese "Pearson-Methode" verwendet werden, weil normalverteilt
+shapiro.test(gesamteindruck)
+shapiro.test(schwierigkeit)
+
+cor.test(gesamteindruck, schwierigkeit, method="pearson")
+
+# r = 0.6834...

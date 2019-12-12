@@ -6,7 +6,7 @@ vorlesung_verstaendlich <- data[,"Vorlesung.verstaendlich"]
 vorlesung_geschwindigkeit <- data[,"Vorlesung.Geschwindigkeit"]
 
 
-plot(vorlesung_verstaendlich,vorlesung_geschwindigkeit)
+plot(vorlesung_verstaendlich,vorlesung_geschwindigkeit, main = "ZH Vorlesung.Verstaendlich und Vorlesung.Geschwindigkeit")
 cor(vorlesung_verstaendlich,vorlesung_geschwindigkeit)
 
 lm(vorlesung_geschwindigkeit~vorlesung_verstaendlich) #zeigt y=kx+d, Rheienfolge Ausgabe - Werte: d dann k
@@ -28,7 +28,7 @@ cor.test(vorlesung_verstaendlich, vorlesung_geschwindigkeit, method="pearson")
 umfang_beispiele <- data[,"Uebung.Beispiele"]
 schwierigkeit_beispiele <- data[,"Uebung.schwierig"]
 
-plot(umfang_beispiele, schwierigkeit_beispiele)
+plot(umfang_beispiele, schwierigkeit_beispiele, main = "ZH Uebung.Beispiele und Uebung.schwierig")
 cor(umfang_beispiele, schwierigkeit_beispiele)
 
 lm(schwierigkeit_beispiele~umfang_beispiele)
@@ -50,7 +50,7 @@ cor.test(umfang_beispiele, schwierigkeit_beispiele, method="spearman")
 abwechlungsreich <- data[,"Unterricht.abwechslungsr"]
 motivierend <- data[, "Unterricht.motivierend"]
 
-plot(abwechlungsreich, motivierend)
+plot(abwechlungsreich, motivierend, main = "Unterrich.abwechslungsreich und Unterricht.motivierend")
 cor(abwechlungsreich,motivierend)
 
 lm(motivierend~abwechlungsreich) #zeigt y=kx+d, Rheienfolge Ausgabe - Werte: d dann k
@@ -72,7 +72,7 @@ cor.test(abwechlungsreich, motivierend, method="pearson")
 motivierend <- data[,"Unterricht.motivierend"]
 fragen <- data[,"Unterricht.Fragen"]
 
-plot(motivierend, fragen)
+plot(motivierend, fragen, main = "ZH Unterricht.motivierend und Unterricht.Fragen")
 cor(motivierend,fragen)
 
 lm(fragen~motivierend)
@@ -94,7 +94,7 @@ cor.test(motivierend, fragen, method="pearson")
 abwechlungsreich <- data[,"Unterricht.abwechslungsr"]
 strukturiert <- data[, "Unterricht.strukturiert"]
 
-plot(abwechlungsreich, strukturiert)
+plot(abwechlungsreich, strukturiert, main = "ZH Unterricht.abwechslungsreich und Unterricht.strukturiert")
 cor(abwechlungsreich,strukturiert)
 
 lm(strukturiert~abwechlungsreich) 
@@ -112,11 +112,10 @@ cor.test(abwechlungsreich, strukturiert, method="pearson")
 
 #Zusammenhang Termin & Zeit und Geschwindigkeit im Unterricht
 
-NA.rm=TRUE
 termin <- data[,"Termin"]
 geschwindigkeit <- data[, "Vorlesung.Geschwindigkeit"]
 
-plot(termin, geschwindigkeit)
+plot(termin, geschwindigkeit, main = "ZH Termin und Vorlesung.Geschwindigkeit")
 cor(termin,geschwindigkeit)
 
 lm(geschwindigkeit~termin) 
@@ -135,11 +134,10 @@ cor.test(termin, geschwindigkeit, method="spearman")
 
 #Zusammenhang Gesamteindruck und Schwierigkeit im Unterricht
 
-NA.rm=TRUE
 gesamteindruck <- data[,"Gesamteindruck"]
 schwierigkeit <- data[, "Uebung.schwierig"]
 
-plot(gesamteindruck, schwierigkeit)
+plot(gesamteindruck, schwierigkeit, main = "ZH Gesamteindruck und Uebung.schwierig")
 cor(gesamteindruck,schwierigkeit)
 
 lm(schwierigkeit~gesamteindruck) 

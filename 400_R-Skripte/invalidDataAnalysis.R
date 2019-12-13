@@ -52,11 +52,11 @@ naCountMatrix <- naCountMatrix[-1,]
 
 
 #create plots for float values in data
-boxplot(commaCountMatrix[, "commaCount"], ylab = "Number of float values", main = "Float values in data")
+boxplot(commaCountMatrix[, "commaCount"], col="#94d639", ylab = "Number of float values", main = "Float values in data")
 barplot(commaCountMatrix[, "commaCount"], names.arg = commaCountMatrix[, "dataSet"], xlab = "Dataset", ylab = "Number of float values", main = "Float values in data")
 
 #create plots for na values in data
-boxplot(naCountMatrix[,"naCount"],ylab ="Number of NA values",main = "NA values in data")
+boxplot(naCountMatrix[,"naCount"],col="#94d639",ylab ="Number of NA values",main = "NA values in data")
 barplot(naCountMatrix[,"naCount"],names.arg=naCountMatrix[,"dataSet"],xlab = "Dataset",ylab ="Number of NA values",main = "NA values in data")
 
 

@@ -1,14 +1,14 @@
-#Zusammenhang Gesamteindrucks zum Modus der anderen Spalten (pro Zeile)
+#Zusammenhang Gesamteindrucks zum Median der anderen Spalten (pro Zeile)
 
 gesamteindruck <- data[, "Gesamteindruck"]
-modeMatrix <- matrix(ncol = 1, nrow = nrow(data))
+medianMatrix <- matrix(ncol = 1, nrow = nrow(data))
 
 for (row in 1:nrow(data)) {
-  modeMatrix[row,] <- mode(data[row, c(2:12)])
+  medianMatrix[row,] <- median(data[row, c(2:12)], na.rm = TRUE)
 }
 
-corValue <- cor(modeMatrix[, 1], gesamteindruck, use = "complete.obs")
+corValue <- cor(medianMatrix[, 1], gesamteindruck, use = "complete.obs")
 
-plot(modeMatrix[, 1], gesamteindruck, xlab = "Modus der restlichen Angaben", ylab = "Gesamteindruck", main = paste("Modus in Relation zum Gesamteindruck cor:", round(corValue, digits = 4)))
-abline(lm(gesamteindruck ~ modeMatrix[, 1]))
+plot(medianMatrix[, 1], gesamteindruck, xlab = "Median der restlichen Angaben", ylab = "Gesamteindruck", main = paste("Median in Relation zum Gesamteindruck, cor:", round(corValue, digits = 4)))
+abline(lm(gesamteindruck ~ medianMatrix[, 1]))
 

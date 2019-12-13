@@ -1,36 +1,35 @@
-hist(data[,"Gesamteindruck"],breaks = c(1,2,3,4,5), xlab ="Schulnoten", main = "Histogram of Gesamteindruck")
+# Histogramm - Gesamteindruck
+hist(data[,"Gesamteindruck"], col="#94d639", main="Histogramm: Gesamteindruck", xlab="Bewertung [Schulnote]", breaks=c(1,2,3,4,5))
 
-hist(data[,"Raum"],breaks = c(1,2,3,4,5), xlab ="Schulnoten",  main = "Histogram of Schulnoten ")
+# Histogramm - Raum
+hist(data[,"Raum"], col="#94d639", main="Histogramm: Raum", xlab="Bewertung [Schulnote]", breaks=c(1,2,3,4,5))
 
-hist(data[,"Termin"],breaks = c(1,2,3,4,5), xlab ="Schulnoten",  main = "Histogram of Termin ")
+# Histogramm - Termin
+hist(data[,"Termin"], col="#94d639", main="Histogramm: Termin", xlab="Bewertung [Schulnote]", breaks=c(1,2,3,4,5))
 
-hist(data[,"Unterricht.abwechslungsr"],breaks = c(1,2,3,4,5), xlab ="Unterricht.abwechslungsr",  main = "Histogram of Unterricht.abwechslungsr")
+# Histogramm - Unterricht.abwechslungsr
+hist(data[,"Unterricht.abwechslungsr"], col="#94d639", main="Histogramm: Unterricht.abwechslungsr", xlab="Bewertung [Schulnote]", breaks=c(1,2,3,4,5))
 
-hist(data[,"Unterricht.motivierend"],breaks = c(1,2,3,4,5), xlab ="Unterricht.motivierend",  main = "Histogram of Unterricht.motivierend ")
+# Histogramm - Unterricht.motivierend
+hist(data[,"Unterricht.motivierend"], col="#94d639", main="Histogramm: Unterricht.motivierend", xlab="Bewertung [Schulnote]", breaks=c(1,2,3,4,5))
 
-hist(data[,"Unterricht.Fragen"],breaks = c(1,2,3,4,5), xlab ="Unterricht.Fragen",  main = "Histogram of Unterricht.Fragen")
+# Histogramm - Unterricht.Fragen
+hist(data[,"Unterricht.Fragen"], col="#94d639", main="Histogramm: Unterricht.Fragen", xlab="Bewertung [Schulnote]", breaks=c(1,2,3,4,5))
 
-hist(data[,"Unterricht.strukturiert"],breaks = c(1,2,3,4,5), xlab ="Unterricht.strukturiert",  main = "Histogram of Unterricht.strukturiert ")
+# Histogramm - Unterricht.strukturiert
+hist(data[,"Unterricht.strukturiert"], col="#94d639", main="Histogramm: Unterricht.strukturiert", xlab="Bewertung [Schulnote]", breaks=c(1,2,3,4,5))
 
-hist(data[,"Vorlesung.verstaendlich"],breaks = c(1,2,3,4,5), xlab ="Vorlesung.verstaendlich",  main = "Histogram of Vorlesung.verstaendlich ")
+# Histogramm - Vorlesung.verstaendlich
+hist(data[,"Vorlesung.verstaendlich"], col="#94d639", main="Histogramm: Vorlesung.verstaendlich", xlab="Bewertung [Schulnote]", breaks=c(1,2,3,4,5))
 
-hist(data[,"Vorlesung.Geschwindigkeit"],breaks = c(1,2,3,4,5), xlab ="Vorlesung.Geschwindigkeit",  main = "Histogram of Vorlesung.Geschwindigkeit")
+# Histogramm - Vorlesung.Geschwindigkeit
+hist(data[,"Vorlesung.Geschwindigkeit"], col="#94d639", main="Histogramm: Vorlesung.Geschwindigkeit", xlab="Bewertung [Schulnote]", breaks=c(1,2,3,4,5))
 
-hist(data[,"Vorlesung.Praxis"],breaks = c(1,2,3,4,5), xlab ="Vorlesung.Praxis",  main = "Histogram of Vorlesung.Praxis ")
+# Histogramm - Vorlesung.Praxis
+hist(data[,"Vorlesung.Praxis"], col="#94d639", main="Histogramm: Vorlesung.Praxis", xlab="Bewertung [Schulnote]", breaks=c(1,2,3,4,5))
 
-hist(data[,"Uebung.Beispiele"],breaks = c(1,2,3,4,5), xlab ="Uebung.Beispiele",  main = "Histogram of Uebung.Beispiele ")
+# Histogramm - Uebung.Beispiele
+hist(data[,"Uebung.Beispiele"], col="#94d639", main="Histogramm: Uebung.Beispiele", xlab="Bewertung [Schulnote]", breaks=c(1,2,3,4,5))
 
-hist(data[,"Uebung.schwierig"],breaks = c(1,2,3,4,5), xlab ="Uebung.schwierig",  main = "Histogram of Uebung.schwierig ")
-
-
-x <- c(data[,"Uebung.schwierig"], 4)
-
-
-barplot(x)
-
-#iterate throw all lines
-for (v in 1:ncol(data)) {
-    print(v)
-    print (median(data[,v], na.rm = TRUE))
-    cat("\n")
-}
+# Histogramm - Uebung.schwierig
+hist(data[,"Uebung.schwierig"], col="#94d639", main="Histogramm: Uebung.schwierig", xlab="Bewertung [Schulnote]", breaks=c(1,2,3,4,5))

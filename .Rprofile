@@ -1,2 +1,2 @@
-#Run Autorun Script
-source("400_R-Skripte/autorun.R")
+# Run "runMe" file on startup
+source("./400_R-Skripte/runMe.R")

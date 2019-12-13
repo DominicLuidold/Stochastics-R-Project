@@ -6,7 +6,7 @@
 # bzw. Working-Directory anpassen, sodass die Auswertungen ausgeführt werden können.
 
 # Einlesen der Ausgangsdaten
-data <- data.matrix(read.csv(file="./300_Daten/Evaluation.csv", sep=";", dec=",", header=TRUE))
+data <- data.matrix(read.csv(file = "./300_Daten/Evaluation.csv", sep = ";", dec = ",", header = TRUE))
 
 # Einlesen selbstgeschriebener Funktionen
 source("./400_R-Skripte/mode.R")

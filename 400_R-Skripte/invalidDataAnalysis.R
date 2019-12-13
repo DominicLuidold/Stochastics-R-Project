@@ -3,7 +3,7 @@ data.withoutComma <- matrix(ncol = 12)
 data.onlyComma <- matrix(ncol = 12)
 
 commaCountMatrix <- matrix(ncol = 2)
-naCountMatrix <- matrix(ncol=2)
+naCountMatrix <- matrix(ncol = 2)
 
 for (row in 1:nrow(data)) {
   commaCount <- 0
@@ -32,16 +32,16 @@ for (row in 1:nrow(data)) {
   else {
     data.withoutComma <- rbind(data.withoutComma, data[row,])
   }
-  
-  if(naCount > 0){
-    cat("row",row,"\thas na count:",naCount,"\n")
-    naCountMatrix <- rbind(naCountMatrix,c(row,naCount))
+
+  if (naCount > 0) {
+    cat("row", row, "\thas na count:", naCount, "\n")
+    naCountMatrix <- rbind(naCountMatrix, c(row, naCount))
   }
 }
 
 #set colnames
 colnames(commaCountMatrix) <- c("dataSet", "commaCount")
-colnames(naCountMatrix) <- c("dataSet","naCount")
+colnames(naCountMatrix) <- c("dataSet", "naCount")
 
 
 #remove null row from matrix
@@ -52,12 +52,12 @@ naCountMatrix <- naCountMatrix[-1,]
 
 
 #create plots for float values in data
-boxplot(commaCountMatrix[, "commaCount"], col="#94d639", ylab = "Number of float values", main = "Float values in data")
+boxplot(commaCountMatrix[, "commaCount"], col = "#94d639", ylab = "Number of float values", main = "Float values in data")
 barplot(commaCountMatrix[, "commaCount"], names.arg = commaCountMatrix[, "dataSet"], xlab = "Dataset", ylab = "Number of float values", main = "Float values in data")
 
 #create plots for na values in data
-boxplot(naCountMatrix[,"naCount"],col="#94d639",ylab ="Number of NA values",main = "NA values in data")
-barplot(naCountMatrix[,"naCount"],names.arg=naCountMatrix[,"dataSet"],xlab = "Dataset",ylab ="Number of NA values",main = "NA values in data")
+boxplot(naCountMatrix[, "naCount"], col = "#94d639", ylab = "Number of NA values", main = "NA values in data")
+barplot(naCountMatrix[, "naCount"], names.arg = naCountMatrix[, "dataSet"], xlab = "Dataset", ylab = "Number of NA values", main = "NA values in data")
 
 
 

@@ -66,6 +66,10 @@ cor.test(durchschnitte, gesamteindruck, method="pearson")
 # Fazit: Der Gesamteindruck wurde nur mit 1 oder 2 (bzw. NA) bewertet, die Durchscnitte pro Zeile variieren
 # von 1 bis 2.
 
+hist(durchschnitte,breaks = c(1,2,3,4,5), xlab ="durchschnitte",  main = "Histogram of Durchschnitte ")
+boxplot(durchschnitte, main="Boxplot: Durchschnitte", ylab="Werte-Durchschnitte")
+
+
 
 
 

@@ -49,11 +49,11 @@ naCountMatrix <- naCountMatrix[-1,]
 
 # Plots für Kommazahlen, die in Ausgangsdaten vorkommen, erstellen
 boxplot(commaCountMatrix[, "commaCount"], col = "#94d639", ylab = "Anzahl Kommazahlen", main = "Kommazahlen in Ausgangsdaten")
-barplot(commaCountMatrix[, "commaCount"], names.arg = commaCountMatrix[, "dataSet"], xlab = "Zeile, in der Kommazahl vorkommt (Dataset)", ylab = "Anzahl Kommazahlen", main = "Kommazahlen in Ausgangsdaten")
+barplot(commaCountMatrix[, "commaCount"], col = "#94d639", names.arg = commaCountMatrix[, "dataSet"], xlab = "Zeile, in der Kommazahl vorkommt (Dataset)", ylab = "Anzahl Kommazahlen", main = "Kommazahlen in Ausgangsdaten")
 
 # Plots für "NA"-Werte, die in Ausgangsdaten vorkommen, erstellen
 boxplot(naCountMatrix[, "naCount"], col = "#94d639", ylab = "Anzahl \"NA\"-Werte", main = "\"NA\"-Werte in Ausgangsdaten")
-barplot(naCountMatrix[, "naCount"], names.arg = naCountMatrix[, "dataSet"], xlab = "Zeile, in der \"NA\"-Wert vorkommt (Dataset)", ylab = "Anzahl \"NA\"-Werte", main = "\"NA\"-Werte in Ausgangsdaten")
+barplot(naCountMatrix[, "naCount"], col = "#94d639", names.arg = naCountMatrix[, "dataSet"], xlab = "Zeile, in der \"NA\"-Wert vorkommt (Dataset)", ylab = "Anzahl \"NA\"-Werte", main = "\"NA\"-Werte in Ausgangsdaten")
 
 # Environment aufräumen
 rm(commaCount)

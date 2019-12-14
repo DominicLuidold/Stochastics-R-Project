@@ -1,17 +1,14 @@
-#Zusammenhang Verständlichkeit und Geschwindigkeit der Vorlesung
+# Zusammenhang: Vorlesung.verstaendlich und Vorlesung.Geschwindigkeit
 vorlesung_verstaendlich <- data[, "Vorlesung.verstaendlich"]
 vorlesung_geschwindigkeit <- data[, "Vorlesung.Geschwindigkeit"]
-
 
 corValue <- cor(vorlesung_verstaendlich, vorlesung_geschwindigkeit, use = "complete.obs")
 mainText <- paste("ZH Vorlesung.Verstaendlich und Vorlesung.Geschwindigkeit, cor:", round(corValue, 4))
 
 plot(vorlesung_verstaendlich, vorlesung_geschwindigkeit, main = mainText)
-abline(lm(vorlesung_geschwindigkeit ~ vorlesung_verstaendlich)) #zeichnet lineare Regressionsgerade
+abline(lm(vorlesung_geschwindigkeit ~ vorlesung_verstaendlich))
 
-
-
-#Zusammenhang Vorlesung Verstaendlich und Vorlesung Praxis im Unterricht
+# Zusammenhang: Vorlesung.verstaendlich und Vorlesung.Praxis
 vorlesung_verstaendlich <- data[, "Vorlesung.verstaendlich"]
 vorlesung_praxis <- data[, "Vorlesung.Praxis"]
 
@@ -21,9 +18,7 @@ mainText <- paste("ZH Vorlesung.verstaendlich und Vorlesung.Praxis, cor:", round
 plot(vorlesung_verstaendlich, vorlesung_praxis, main = mainText)
 abline(lm(vorlesung_praxis ~ vorlesung_verstaendlich))
 
-
-
-#Zusammenhang Umfang der Beispiele und Schwierigkeit
+# Zusammenhang: Uebung.Beispiele und Uebung.schwierig
 umfang_beispiele <- data[, "Uebung.Beispiele"]
 schwierigkeit_beispiele <- data[, "Uebung.schwierig"]
 
@@ -33,9 +28,7 @@ mainText <- paste("ZH Uebung.Beispiele und Uebung.schwierig, cor:", round(corVal
 plot(umfang_beispiele, schwierigkeit_beispiele, main = mainText)
 abline(lm(schwierigkeit_beispiele ~ umfang_beispiele))
 
-
-
-#Zusammenhang Unterricht abwechlungsreich und motivierend
+# Zusammenhang: Unterricht.abwechslungsr und Unterricht.motivierend
 abwechlungsreich <- data[, "Unterricht.abwechslungsr"]
 motivierend <- data[, "Unterricht.motivierend"]
 
@@ -43,11 +36,9 @@ corValue <- cor(abwechlungsreich, motivierend, use = "complete.obs")
 mainText <- paste("ZH Unterrich.abwechslungsreich und Unterricht.motivierend, cor:", round(corValue, 4))
 
 plot(abwechlungsreich, motivierend, main = mainText)
-abline(lm(motivierend ~ abwechlungsreich)) #zeichnet lineare Regressionsgerade
+abline(lm(motivierend ~ abwechlungsreich))
 
-
-
-#Zusammenhang genügend Platz für Fragen und motivierend
+# Zusammenhang: Unterricht.motivierend und Unterricht.Fragen
 motivierend <- data[, "Unterricht.motivierend"]
 fragen <- data[, "Unterricht.Fragen"]
 
@@ -57,9 +48,7 @@ mainText <- paste("ZH Unterricht.motivierend und Unterricht.Fragen, cor:", round
 plot(motivierend, fragen, main = mainText)
 abline(lm(fragen ~ motivierend))
 
-
-
-#Zusammenhang abwechslungsreich und strukturiert
+# Zusammenhang: Unterricht.abwechslungsr und Unterricht.strukturiert
 abwechlungsreich <- data[, "Unterricht.abwechslungsr"]
 strukturiert <- data[, "Unterricht.strukturiert"]
 
@@ -69,9 +58,7 @@ mainText <- paste("ZH Unterricht.abwechslungsreich und Unterricht.strukturiert, 
 plot(abwechlungsreich, strukturiert, main = mainText)
 abline(lm(strukturiert ~ abwechlungsreich))
 
-
-
-#Zusammenhang Gesamteindruck und Schwierigkeit im Unterricht
+# Zusammenhang: Gesamteindruck und Uebung.schwierig
 gesamteindruck <- data[, "Gesamteindruck"]
 schwierigkeit <- data[, "Uebung.schwierig"]
 

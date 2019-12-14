@@ -1,4 +1,4 @@
-#find float values in data
+# Finde Kommazahlen, die in Ausgangsdaten vorkommen
 data.withoutComma <- matrix(ncol = 12)
 data.onlyComma <- matrix(ncol = 12)
 
@@ -23,7 +23,6 @@ for (row in 1:nrow(data)) {
   }
 
   if (commaCount > 0) {
-    cat("row", row, "\thas comma count:", commaCount, "\n")
     data.onlyComma <- rbind(data.onlyComma, data[row,])
     commaCountMatrix <- rbind(commaCountMatrix, c(row, commaCount))
 
@@ -34,35 +33,29 @@ for (row in 1:nrow(data)) {
   }
 
   if (naCount > 0) {
-    cat("row", row, "\thas na count:", naCount, "\n")
     naCountMatrix <- rbind(naCountMatrix, c(row, naCount))
   }
 }
 
-#set colnames
+# Setze colnames
 colnames(commaCountMatrix) <- c("dataSet", "commaCount")
 colnames(naCountMatrix) <- c("dataSet", "naCount")
 
-
-#remove null row from matrix
+# "NULL"-Zeilen aus Daten-Matrix entfernen
 data.withoutComma <- data.withoutComma[-1,]
 data.onlyComma <- data.onlyComma[-1,]
 commaCountMatrix <- commaCountMatrix[-1,]
 naCountMatrix <- naCountMatrix[-1,]
 
+# Plots für Kommazahlen, die in Ausgangsdaten vorkommen, erstellen
+boxplot(commaCountMatrix[, "commaCount"], col = "#94d639", ylab = "Anzahl Kommazahlen", main = "Kommazahlen in Ausgangsdaten")
+barplot(commaCountMatrix[, "commaCount"], names.arg = commaCountMatrix[, "dataSet"], xlab = "Zeile, in der Kommazahl vorkommt (Dataset)", ylab = "Anzahl Kommazahlen", main = "Kommazahlen in Ausgangsdaten")
 
-#create plots for float values in data
-boxplot(commaCountMatrix[, "commaCount"], col = "#94d639", ylab = "Number of float values", main = "Float values in data")
-barplot(commaCountMatrix[, "commaCount"], names.arg = commaCountMatrix[, "dataSet"], xlab = "Dataset", ylab = "Number of float values", main = "Float values in data")
+# Plots für "NA"-Werte, die in Ausgangsdaten vorkommen, erstellen
+boxplot(naCountMatrix[, "naCount"], col = "#94d639", ylab = "Anzahl \"NA\"-Werte", main = "\"NA\"-Werte in Ausgangsdaten")
+barplot(naCountMatrix[, "naCount"], names.arg = naCountMatrix[, "dataSet"], xlab = "Zeile, in der \"NA\"-Wert vorkommt (Dataset)", ylab = "Anzahl \"NA\"-Werte", main = "\"NA\"-Werte in Ausgangsdaten")
 
-#create plots for na values in data
-boxplot(naCountMatrix[, "naCount"], col = "#94d639", ylab = "Number of NA values", main = "NA values in data")
-barplot(naCountMatrix[, "naCount"], names.arg = naCountMatrix[, "dataSet"], xlab = "Dataset", ylab = "Number of NA values", main = "NA values in data")
-
-
-
-
-#cleanup
+# Environment aufräumen
 rm(commaCount)
 rm(modVal)
 rm(col)
